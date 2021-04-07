@@ -1,0 +1,28 @@
+Informed Search Methods
+    - Incorporate additional measures of a potential of a specific state to reach the goal
+    - A potential of a state to reach a goal is measued by a HEURISTIC FUNCTION
+        - denoted h(n)
+
+Evaluation-Function Driven Search
+    - Search strategy = a node evaluation function f(n)
+        - defines desirability of a node
+        - expand node w/ best evaluation-function value
+        - implementation: priority queue w/ nodes in decreasing order of their evaluation function value
+    - Uniform cost search: f(n) = g(n) 
+        - g(n) = path cost function 
+
+Best-First Search: incorporates a heuristic function, h(n) to eval-func f(n) to guide the search
+    - Heuristic: measures potential of state to reach a goal (usually distance) 
+    - ex. TSP problem, calculate direct distance and use that to predict best route
+
+Greedy Search: chooses closest city and keep doing that at each city to travel 
+    - Complete: No, can go back and forth between two cities
+    - Optimal: No
+    - Time: O(b^m) - good heuristic could fix this 
+    - Space: O(b^m)
+
+A* Search: estimate total cost of path through node n to the goal f(n) = g(n) + h(n) 
+    - Complete: Yes
+    - Optimal: Yes if admissable
+        - admissable = h(n) < h*(n) or g(n) + heuristic
+

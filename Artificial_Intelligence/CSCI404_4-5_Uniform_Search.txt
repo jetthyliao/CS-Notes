@@ -1,0 +1,100 @@
+Uniform Search (Slides 4 & 5)
+
+Breadth-First Search: expand shallowest unexpanded node.    
+    - Implementation: frontier is a FIFO queue, new successor goes on end
+    - Complete: yes
+    - Optimal: if path cost is a nodecreasing function of the node depth
+    - Time: exponential
+    - Space: exponential, space is more serious problem to address
+
+Depth-First Search: expand deepest unexpanded node
+    - Implementation: frontier is LIFO queue, put successor at front
+    - Complete: could fail in infinite depth spaces
+    - Optimal: no returns first soln it finds
+    - Time: exponential in maximum depth (if visiting of repeated states is not allowed), infinity if repeated states
+    - Space: linear in maximum depth of search tree 
+    
+Depth Limited Depth First Search: limit on depth of exploration
+    - Iterative: increment depth limits until solution is reach 
+    - Complete: Yes
+    - Optimal: No, in general. Yes, if all step costs are the same
+    - Time: Worst case O(b^d)
+    - Space: linear space O(bd)
+
+Elimination of State Repeats
+    - Two possible cases
+        A) Cyclic state repeats 
+        B) Non-cyclic state repeats
+    - Case A: corresponds to the path with a cycle
+        - branches representing cycles cannot be part of the shortest solution and thus can be eliminated
+        - check if cyclic state repeats: check ancestors in tree structure  
+            - requires you to keep tree
+            - do not expand node w/ state that is the same
+    - Case B: nodes w/ same state are not on the same path from the initial state
+        - There is an optimal node in which the distance from initial to target is the shortest 
+        - Problem: nodes can be encounrtered in different order during different search strategies
+        - BFS will find the short path to node
+            - can safely eliminate other nodes
+            - implementation: expanded states marked and stored in hash table, if node has been expanded lookup in hash
+        - DFS does not imply correct elimination strategy
+            - need to remember length of path between nodes to eliminate the long ones
+
+Elimination of All State Redundancies
+    - General strategy: A node is redundant if there is another node with exactly the same state and a shorter path from the initial state
+        - works for any search method
+        - uses additional path length info 
+    - Implementation: marking with the minimum path value
+        - the new node is redundant and can be eliminated if...
+            - it is in the hash table (marked)
+            - its path is longer or equal to the value stored
+        - otherwise the new node cannot be eliminated and it is entered together w/ its value into the hash table. 
+            - if state was in the hash table the new path value is better then needs to be overwritten 
+
+Search by Tree/Graph
+    - Tree search
+        - initialize the frontier using the starting state
+        - while the frontier is not empty
+            - chose a frontier node to expand according to search strategy
+            - if the node contains the goal state, return solution
+            - else expand node and add its children to frontier
+    - Graph search
+        - to handle repeated states: 
+            - keep an explored set; add each node to the explored set every time you expand it
+            - every time you add a node to the frontier, check if it exists in frontier w/ higher path cost, if yes, replace that node w/ new one. 
+
+Searching for the minimum cost path
+    - General problem: add weights or costs to operators (links)
+    - Search strategy: "intelligent" expansion of search tree should be driven by cost of current build path
+    - Implementation: 
+        - path cost function for node n: g(n)
+            - length of the path represented by the search tree branch starting at the root of the tree (initial state) to n
+
+        - search strategy:
+            - expand the leaf node w/ minimum g(n) first
+            - can be implemented by the priority queue
+
+Uniform-Cost Search
+    - For each frontier node, save the total cost of the path from the initial state to that node
+    - Expand the frontier node w/ lowest path cost
+    - Implementation: frontier is a priority queue ordered by path cost
+    - Uniform VS BFS
+        - uniform: goal test is performed when the node is selected for expansion
+        - BFS: when node is first generated
+        - a test is added in case a better path is found to a node currently on the frontier
+    - Complete: yes, if step cost is greater than some positive constant (dont want infinite sequences of steps that have a finite total cost)
+    - Optimal: yes, nodes expanded in increasing order of path cost
+    - Time: worse case (slide 10) wtf lol
+    
+Searching w/ non deterministic actions
+    - ex. driving, walking, how you know what environment gonna be like
+    - Future states cannot be determined in advance
+    - Solution to problem is contingency plan (strategy) not sequence of states
+    - Vaccum example (slide: 5.15)
+
+AND-OR Search Trees: tree alternate between two types nodes
+    - OR nodes: agent chooses between actions
+    - AND nodes: choice is induced by the environments choice of outcome
+    - Solution for AND-OR search problem is a subtree that...
+        - specifies one action at each OR node
+        - includes every outcome at each AND node (if-else plan created)
+        - has a goal node at every leaf

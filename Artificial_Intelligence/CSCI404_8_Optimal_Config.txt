@@ -1,0 +1,35 @@
+Classical Search: explore state spaces systematically, which therby use too much memory
+
+Two Types of Search Problems
+    1) Start and goal is given and known, solution path matters
+    2) Start and goal is not specific and unknown, solution path doesnt matter
+
+Local Search Algorithms: for problems where path to the goal does not matter
+    - Operates using a single current node (generally move to only neighbors of that node) 
+    - Typically the paths followed by the search are not retained
+    - Advantages: 
+        - uses little memory, usually a constant amt of memory
+        - they can find reasonably solutions in large or even infinite state spaces, for which systematic algorithms are unsuitable 
+
+State-Space Landscape
+    - If the evaluation corresponds to cost, find the lowest value (global min)
+    - If the evaluation corresponds to objective func, find highest peak (global max)
+    - TSP
+        - state space: all possible tours
+        - objective function: tour length
+
+Hill Climbing Greedy Search: like climbing everest in a fog with amnesia
+    - Gets stuck for the following reasons
+        - local maxima
+        - plateaus
+        - ridge
+    - Remedy 1: Sideways moving for hill-climbing algo
+        - pro: raise percentage of problem instances, comes at a cost of more failure steps than successful ones
+        - cons: if you move sideways to much youll never reach uphill. Infinite loop occurs at local max
+    - Remedy 2: Stochastic hill climbing: choose at random from the uphill moves
+        - usually converges more slowly but in some state landscapes it finds better solutions
+    - Remedy 3: first-choice hill climbing: implement stochastic hill climbing by generating successors randomly until one is generated that is better than current state
+        - Good when there are many successors
+    - Remedy 4: Random-restart hill climbing: adopts if at first dont succeed, try try again
+        - Conducts series of hill climbing searchs from random genereted inital state until goal is found
+        - trivially complete

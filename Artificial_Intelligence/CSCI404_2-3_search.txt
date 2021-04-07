@@ -1,0 +1,71 @@
+Search (Slide 1, 2 and 3)
+
+Search Problem Defined By...
+    - Search space 
+        - the set of objects among which we search for the solution
+    - Goal condition
+        - what are the characteristics of the object we want to find in the search space
+
+Search
+    - Process of exploration of the search space
+    - Efficiency depends on... 
+        - the search space and its size
+        - method used to traverse the search space
+        - condition to test satisfaction of search objective
+    - Efficiency can be influenced with certain techniques!
+
+Graphs
+    - Search problems can often be represented by graphs
+    - Four components
+        1) Search space: set of objects where you search for the solution
+            - defined indirectly as initial state + operatirs
+        2) Initial state: state configuration we start to search from 
+        3) Operators: transform one state to another
+        4) Goal condition: defines the target state
+    - Two types of graph search problems
+        1) Path search
+            - find a path between states S and T
+        2) Configuration search
+            - Find a state satisfying goal condition
+
+Comparison of Problem Formulations (slide: 4) 
+
+Search Process - process of exploration of the state space (search space) through successive application of operators from the initial state.
+    - Search tree = structure representing the exploration trace
+    - Built online during the search process
+    - Branches correspond to explored paths, and leaf nodes to the exploration fringe
+        - fringe: a path of unexplored nodes
+    - Search tree different from graph representation
+        - states can repeat in the search tree
+    - ex. search algorithm (slide: 11)
+    - Search methods - differ in how they explore the space, that is how they choose the node to expand next
+
+Implementation: states vs nodes
+    - State - a (representation of) a physical configuration
+    - Node - a data strcuture constituing part of a search tree including...
+        1) state
+        2) parent
+        3) action
+        4) path-cost g(n)
+
+Properties of search methods
+    1) Completeness - does the method find the solution if it exists
+    2) Optimality - is the solution returned by the algorithm optimal? Does it give a minimum length path?
+    3) Space and time complexity - how much time/memory does it take to find solution
+    
+Parameters to Measure Complexity
+    - b: maximum branching factor (# of applicable operators)
+    - d: depth of the optimal solution 
+    - m: maximum depth of the state space
+
+Uniformed Search vs Informed Search
+    - Uniformed stratgies: use only the information available in the problem definition
+        - Breadth-first search (BFS) 
+        - Depth-first serach (DFS)
+        - Depth-limited searc
+        - Iterative deepning algorithm (IDA)
+        - Bi-directional search
+        - Uniform-cost search
+    - Informed strategies use problem-specific knowledge beyond the info avaialable in the problem definition to improve the search performance. 
+        - Greedy search
+        - A* search

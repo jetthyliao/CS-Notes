@@ -1,0 +1,45 @@
+Local Search 
+    - Pro: only expand one node in a tree, less memory. 
+    - Con: can get stuck in a local max
+    - Remedies (4 from previous lecture)    
+        1) Hill climbing with sideways moves: allow search to continue on a shoulder or "flat" local optima
+        2) Stochastic hill climbing: randomly choose a successor w/ better eval values
+        3) First-choice hill climbing: choose first sucessor w/ better eval values
+        4) Random restart hill climbing: restart w/ random generated inital state success
+
+Is Hill Climbing Algorithm Useful: depends on shape of state-space landscape (less local maxima and plateau = random restart hill climbing will find good soln quick)
+    - Real life problems have hella tips. However, a reasonably good local max can often be found after a small number of restarts
+
+Simulated Annealing
+    - CURRENT ISSUE... 
+        - a hill climbing algorithm that never makes downhill moves toward states w/ lower value (or higher cost) is guaranteed to be incomplete, because it can get stuck on local maximum
+        - In contrast, moving to a sucessor chosen uniformly at random from the set of successors is complete but extremely inefficient
+    - SOLUTION: simulated annealing
+        - analogy: imagine you want to put a pingpong ball into the deepest crevice of a bumpy surface. You do this by shaking the surface so that the pingpong ball can bounce out of local mins, but not too hard so that it doesnt bounce out of the global min. 
+        - simulated annealing will shake hard at first and then slowly decrease the shake. 
+    - Psuedo code (slide 8)
+        - probability equation will be on test
+        - exp (delta / T(i))
+    - Probability determines whether a hill climb is acceptable
+
+Effect of Temperature: probability decreases at temperature T goes down
+    - "Bad" moves are more likely to be allowed with a higher T (higher prob) and they become more unlikely as T decreases. 
+    - If temperature decreases slowly enough then simulated annealing will find a global optimum with probability approaching one. HOWEVER...
+        - usually takes impractically long
+        - the more downhill steps you need to escape a local optimum, the less likely you are to make all of them in a row
+        - more modern techniques: general family of markov chain algorithms for exploring complicated state spaces
+
+Local Beam Search
+    - Start w/ K randomly generated states
+    - At each iteration, all successors of K states are generated
+    - If any one is goal state, stop; else select the k best successors from the list and repeat
+    - Similar to random-restart search but with K running paralllely, also passes on info among the search threads
+
+Genetic Search
+    a) ranked by fitness function
+    b) resulting pair for mating
+    c) produce off spring
+    d) subject to mutation
+
+
+

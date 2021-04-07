@@ -1,0 +1,83 @@
+###################################
+
+"MODULE 1"
+
+################################### 
+
+1.1 Security Concepts
+
+- Computer Security 
+- Three Key Objectives of Computer Security
+- Additional Concepts
+- Levels of Impact from Security Breaches
+- Computer Security Challenges
+
+1.2 Security Terminology and Architecture
+
+- Aspects of Security
+- Countermeasures
+- Security Functional Requirements
+- Security Attack
+    - Passive Attacks
+    - Active Attacks
+- Security Services
+- Security Mechanisms
+- Model for Network Security
+- Model for Network Access Security
+
+###################################
+
+"MODULE 2"
+
+################################### 
+
+2.1 Terminology and Attacks to Cryptographic Systems
+
+- Symmetric Encryption 
+- Basic Terminology
+- Symmetric Cipher Model
+- Cryptography
+- Attacks to Cryptographic Systems
+- Cryptanalytic Attacks
+- Additional Definitions
+- Brute Force Search
+
+2.2 Substitution Ciphers
+
+- Caesar Cipher
+- Monoalphabetic Cipher
+- Playfair Cipher
+    - Security of Playfair Cipher
+- Hill Cipher
+    - Hill Cipher (for m = 3)
+    - Security of Hill Cipher
+    - Breaking Hill Cipher
+
+2.3 More Substitution Ciphers, Transposition Ciphers, and Product Ciphers
+
+- Polyalphabetic Cipher
+    - Vigenere Cipher
+    - Autokey Cipher
+    - Vernam Cipher
+    - One-Time Pad
+- Transposition Ciphers
+    - Rail Fence Cipher
+    - Row Transposition Ciphers
+    - Security of Transposition Ciphers
+- Product Ciphers
+    - Rotor Machines
+    - Steganography
+
+###################################
+
+"MODULE 3"
+
+################################### 
+
+3.1 Ideal Block Cipher and Feistel Cipher Structure
+
+- Problems of Ideal Block Cipher
+- Feistel Cipher
+- Claude Shannon and Substitution-Permutation Ciphers
+    - Confusion and Diffusion
+- Feistel Cipher Structure

@@ -1,0 +1,3 @@
+
+PROVING FINITE LANGUAGE IS REGULAR: 
+    https://www.cs.odu.edu/~toida/nerzic/390teched/regular/reg-lang/properties1.html

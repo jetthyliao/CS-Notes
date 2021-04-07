@@ -1,0 +1,62 @@
+###################################
+
+"LECTURE 2"
+
+################################### 
+
+Designing a Computer
+
+- Metrics
+    - Latency 
+    - Speedup
+    - Throughput
+    - Latency VS Bandwidth
+    - Power
+    - Derived Metrics
+
+Comparing Architectures
+    - Benchmark
+        - Classes of Benchmarks
+
+CPU Performance: Performance Equation
+
+- Reducing Cycle Time
+- Instruction Count
+- Cycles Per Instruction
+    - Instruction Mix and CPI
+- Comparing Similar Systems
+    - Abusing the PE
+
+###################################
+
+"LECTURE 3"
+
+################################### 
+
+Amdahl's Law: Fundamental Theorem 
+
+- Amdahl's Law Example
+
+Amdahl's Law: 2nd Law
+
+- Amdahl's Corollary 1
+    - Example
+- Amdahl's Corollary 2
+    - Example
+- Amdahl's Corollary 3
+    - Example
+- Amdahl's Corollary 4
+    - Amdahl's Non-Corollary
+    - Example
+
+Idea of the CPU
+
+Institution Set Architecture (ISA)
+
+MIPS ISA
+
+- MIPS Basics
+    - MIPS R-Type Arithmetic Instructions
+    - MIPS R-Type Control Instructions
+    - MIPS I-Type Arithmetic Instructions
+    - MIPS I-Type Branch Instructions
