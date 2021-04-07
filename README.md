@@ -10,11 +10,11 @@ Here's a list of all the courses I have notes in and the textbook for that cours
 
 | Course # | Title                               | Textbook                                 |
 |----------|-------------------------------------|------------------------------------------|
-|\*CSCI404 | Artificial Intelligence             | AI a Modern Approach 3^rd^ Edition       |
-| CSCI406  | Algorithms                          | The Algorithm Design Manual 2^nd^ Edition|
+|\*CSCI404 | Artificial Intelligence             | AI a Modern Approach 3rd Edition         |
+| CSCI406  | Algorithms                          | The Algorithm Design Manual 2nd Edition  |
 | CSCI470  | Machine Learning                    | N/A                                      |
-| CSCI564  | Computer Architecture               | Computer Architecture 5^th^ Edition      | 
-| CSCI574  | Cryptography                        | Cryptography and Security 7^th^ Edition  |
+| CSCI564  | Computer Architecture               | Computer Architecture 5th Edition        | 
+| CSCI574  | Cryptography                        | Cryptography and Security 7th Edition    |
 | CSCI598  | Program Verification                | N/A                                      |
 | CSCI561  | Theory of Computation               | N/A                                      |
 | CSCI562  | Advance Algorithms                  | N/A                                      | 
